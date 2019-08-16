@@ -19,4 +19,31 @@
         return v;
         }
     };
-## 剑指offer
+## 两个栈实现一个队列
+     class Solution
+     {
+     public:
+          void push(int node) {
+          stack1.push(node);
+           }
+
+           int pop() {
+               if(stack2.empty())
+               {
+                   while(!stack1.empty())
+                   {
+                       int tmp=stack1.top();
+                       stack2.push(tmp);
+                       stack1.pop();
+                    }
+               }
+               int m=stack2.top();
+               stack2.pop();
+               return m;;
+          }
+
+    private:
+          stack<int> stack1;//存放入队元素
+          stack<int> stack2;//存放出队元素
+    };
+ ## 剑指offer
