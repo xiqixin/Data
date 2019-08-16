@@ -2,15 +2,6 @@
 数据结构
 
 ## 单链表逆序输入到一个数组中返回
-/**
-*  struct ListNode {
-*        int val;
-*        struct ListNode *next;
-*        ListNode(int x) :
-*              val(x), next(NULL) {
-*        }
-*  };
-*/
 class Solution {
 public:
     vector<int> printListFromTailToHead(ListNode* head) {
@@ -28,3 +19,4 @@ public:
         return v;
     }
 };
+## 剑指offer
