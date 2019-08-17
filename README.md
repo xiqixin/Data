@@ -46,4 +46,30 @@
           stack<int> stack1;//存放入队元素
           stack<int> stack2;//存放出队元素
     };
+ ## 输出链表的倒数第 K 个节点
+     class Solution {
+     public:
+           ListNode* FindKthToTail(ListNode* pListHead, unsigned int k) {
+                 ListNode* p1=pListHead;
+                 ListNode* p2=pListHead;//先走k步
+                 while(p2!=NULL&&k--)
+                 {
+                     p2=p2->next;
+                }
+                if(p2==NULL)
+               {
+                  if(k==0)
+                  {
+                      return p1;
+                  }
+                  return NULL;
+               }
+               while(p2!=NULL)
+               {
+                  p1=p1->next;
+                  p2=p2->next;
+               }
+               return p1;
+         }
+     };
  ## 剑指offer
