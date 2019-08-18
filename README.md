@@ -95,4 +95,52 @@
 	     cout << v[i] << endl;
 	     return 0;
      }
+ ## 进制转
+    #include <iostream>
+    #include <vector>
+    #include <string>
+    using namespace std;  
+    int main()
+    {
+	vector<int> v;
+	int m, n;
+	cin >> m >> n;
+	if (n == 10 || m == 0)
+	{
+		cout << m;
+		return 0;
+	}
+	while (m)
+	{
+		v.push_back(m%n);
+		m /= n;
+	}
+	for (int i = v.size() - 1; i >= 0; i--)
+	{
+		if (v[i] > 9) {
+
+			if (v[i] == 10)
+				cout << "a";
+
+			if (v[i] == 11)
+				cout << "b";
+
+			if (v[i] == 12)
+				cout << "c";
+
+			if (v[i] == 13)
+				cout << "d";
+
+			if (v[i] == 14)
+				cout << "e";
+
+			if (v[i] == 15)
+				cout << "f";
+
+		}ekse{
+            cout << v[i]; 
+		}
+	}
+	return 0;
+     }
  ## 平时的练习
