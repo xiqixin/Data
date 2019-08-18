@@ -95,7 +95,7 @@
 	     cout << v[i] << endl;
 	     return 0;
      }
- ## 进制转
+ ## 进制转换
     #include <iostream>
     #include <vector>
     #include <string>
