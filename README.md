@@ -73,3 +73,26 @@
          }
      };
  ## 剑指offer
+ ## 输出字符串中出现次数大于等于n/2的数
+     //输出数字串中出现次数大于等于n/2的数
+     #include <iostream>
+     #include <stdio.h>
+     #include <algorithm>
+     using namespace std;
+
+     int main()
+     {
+	     vector<int> v;//用于存放输入的数组
+	     int tmp;
+          while (1)
+	     {
+		     scanf("%d ", &tmp);
+		     fflush(stdin);
+		     v.push_back(tmp);
+	     }
+	     sort(v.begin(), v.end());
+          int i = len / 2;
+	     cout << v[i] << endl;
+	     return 0;
+     }
+ ## 平时的练习
