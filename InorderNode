@@ -1,0 +1,23 @@
+/给定一个带有头结点 head 的非空单链表，返回链表的中间结点。
+//如果有两个中间结点，则返回第二个中间结点。
+/**
+* Definition for singly-linked list.
+* struct ListNode {
+*     int val;
+*     struct ListNode *next;
+* };
+*/
+struct ListNode* middleNode(struct ListNode* head) {
+	struct ListNode*p1 = head;
+	struct ListNode*p2 = head;
+	while (p2 != NULL)
+	{
+		p2 = p2->next;
+		if (p2 != NULL)
+		{
+			p2 = p2->next;
+			p1 = p1->next;
+		}
+	}
+	return p1;
+}
