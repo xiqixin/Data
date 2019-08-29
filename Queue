@@ -1,0 +1,98 @@
+#pragma once
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <assert.h>
+typedef int QDataType;
+
+//用单链表实现队列
+
+//链表的结点
+typedef struct QNode
+{
+	QDataType val;
+	struct QNode* next;
+}QNode;
+
+//队列
+typedef struct Queue
+{
+	QNode *front;//指向链表第一个结点，如果链表为空，==NULL
+	QNode *rear; //指向链表最后一个结点，如果链表为空，==NULL
+	int size;    //表示队列中数据个数
+}Queue;
+
+//初始化
+void QueueInit(Queue* queue)
+{
+	queue->front = NULL;
+	queue->rear = NULL;
+	queue->size = 0;
+}
+
+//销毁
+void QueueDestroy(Queue* queue)
+{
+	QNode* cur,*next;
+	for (cur = queue->front; cur != NULL; cur = next)
+	{
+		next = cur->next;
+		free(cur);
+	}
+	queue->front = NULL;
+	queue->rear = NULL;
+	queue->size = 0;
+}
+
+//入队：只能从链表结尾进入
+void QueuePush(Queue* queue, QDataType val)
+{
+	//申请结点
+	QNode* node = (QNode*)malloc(sizeof(QNode));
+	assert(node);
+	node->next = NULL;
+	queue->size++;
+	if (queue->front == NULL)
+	{
+		queue->front = node;
+		queue->rear = node;
+	}
+	else
+	{
+		queue->rear->next = node;//先把node放到最后
+		queue->rear = node;
+	}
+}
+//出队：只能从队首出(相当于头删)
+void QueuePop(Queue* queue)
+{
+	assert(queue->size>0);
+	assert(queue->front != NULL);
+	QNode* old_first = queue->front;
+	queue->front = queue->front->next;
+	free(old_first);
+	queue->size--;
+	if (queue->front == NULL)
+	{
+		queue->rear = NULL;
+	}
+}
+//返回队首元素
+QDataType QueueFront(Queue* queue)
+{
+	return queue->front->val;
+}
+
+//判断是否为空
+int QueueEmpty(Queue* queue)
+{
+	//是空返回1，非空返回0
+	return queue->size == 0 ? 1 : 0;
+}
+
+//返回队列的长度
+int QueueSize(Queue* queue)
+{
+	return queue->size;
+}
+
