@@ -143,4 +143,59 @@
 	}
 	return 0;
      }
+ ## 将两个有序链表合并为一个新的有序链表并返回
+    /**
+    * Definition for singly-linked list.
+    * struct ListNode {
+    *     int val;
+    *     struct ListNode *next;
+    * };
+	*/
+	struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2) {
+		if (p1 == NULL)
+		{
+			return p2;
+		}
+		if (p2 == NULL)
+		{
+			return p1;
+		}
+		struct ListNode* new = (struct ListNode*)malloc(sizeof(struct ListNode));
+		struct ListNode* p0 = new;
+		struct ListNode* p1 = l1;
+		struct ListNode* p2 = l2;
+		while (p1 != NULL && p2 != NULL)
+		{
+			if (p1->val<p2->val)
+			{
+				new = p1;
+				new = new->next;
+				p1 = p1->next;
+			}
+			if (p1->val == p2->val)
+			{
+				new = p1;
+				new = new->next;
+				new = p2;
+				new = new->next;
+				p1 = p1->next;
+				p2 = p2->next;
+			}
+			if ((p1->val)>(p2->val))
+			{
+				new = p2;
+				new = new->next;
+				p2 = p2->next;
+			}
+		}
+		if (p1 == NULL && p2 != NULL)
+		{
+			new = p2;
+		}
+		if (p2 == NULL && p1 != NULL)
+		{
+			new = p1;
+		}
+		return p0;
+  	}
  ## 平时的练习
