@@ -23,7 +23,6 @@ void SeqListPushBack(SeqList* s1,SLDataType data)
 	s1->array[s1->size] = data;
 	s1->size++;
 }
-
 //头插
 void SeqListPushFront(SeqList* s1, SLDataType data)
 {
