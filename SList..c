@@ -20,7 +20,6 @@ void SListDestroy(SList* list)
 	}
 	list->first = NULL;
 }
-
 SListNode* BuySListNode(SLDataType data)
 {
 	SListNode* node = (SListNode*)malloc(sizeof(SListNode));
