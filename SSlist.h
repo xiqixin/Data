@@ -39,8 +39,7 @@ void SListPushBack(SList* list, SLDataType data);
 // 尾删
 void SListPopBack(SList *list);
 
-// 查找
-// NULL 表示没找到
+// 查找   NULL 表示没找到
 SListNode* SListFind(SList *list, SLDataType data);
 
 // 在 pos 这个结点后面插入新结点
