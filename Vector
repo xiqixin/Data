@@ -1,0 +1,76 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <iostream>
+#include <string>
+#include <assert.h> 
+#include <vector>
+
+using namespace std;
+
+template <class T>
+class Vector{
+public:
+	typedef T* iterator;
+	typedef const T* const_iterator;
+	iterator begin()
+	{
+		return _start;
+	}
+	iterator end()
+	{
+		rturn _finish;
+	}
+	const_iterator cbegin()const
+	{
+		return _start;
+	}
+	const_iterator cend()const
+	{
+		rturn _finish;
+	}
+	Vector()
+		:_start(nullptr)
+		,_finish(nullptr)
+		,_endOfStorage
+	{ }
+	void PushBack(const T& val)
+	{
+		//先判断容量
+		if (_finish == _endOfStorage)
+		{
+			size_t newCapacity = _start == nullptr ? 1 : 2 * Capacity();
+			Reserve(newCapacity);
+		}
+		*_finish++ = val;
+	}
+	Vector(int n, const T& value = T())
+		: _start(nullptr)
+		, _finish(nullptr)
+		, _endOfStorage
+	{
+		Reaerve(n);
+	    while (n--)
+	    {
+		Pushback(value);
+	    }
+	}
+	size_t capacity()const
+	{
+		return _endOfStorage - _start;
+	}
+	void Reserve(size_t n)
+	{
+
+	}
+private:
+	T* _tart;
+	T* _finish;
+	T* _endOfStorage;
+};
+
+int main()
+{
+  
+	system("pause");
+	return 0;
+}
