@@ -235,7 +235,7 @@
    	  int minDepth(TreeNode* root) {
        	 if(root==nullptr)
        	 {
-            return 0;
+             return 0;
        	 }
        	 int dl = minDepth(root->left);
         	int dr = minDepth(root->right);
