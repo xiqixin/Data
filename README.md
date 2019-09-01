@@ -269,4 +269,32 @@
          return sum;
        }
    };
+ ## 跳台阶（总结：f(n)=f(n-2)+f(n-1))
+    class Solution {
+    public:
+       int jumpFloor(int number) {
+       	  int f1=1;
+      	  int f2=2; 
+          if(number==0)
+          {
+            return 0;
+          }
+          if(number==1)
+          {
+            return f1;
+          }
+          if(number==2)
+          {
+            return f2;
+          }
+          int sum=0;
+          for(int i=3;i<=number;++i)
+         {
+             sum=f1+f2;
+             f1=f2;
+             f2=sum;
+         }
+         return sum;
+      }
+    };
  ## 平时的练习
