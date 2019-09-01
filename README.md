@@ -245,4 +245,28 @@
         	return 1+min(dl,dr);
     	}
 	};
+ ##  斐波那契数列
+    class Solution {
+	public:
+   		 int Fibonacci(int n) {
+      	    if(n==0)
+      	    {
+            	return 0;
+      	    }
+       	   if(n>0&&n<=2)
+           {
+              return 1;
+           }
+           int fn1=1;
+           int fn2=1;
+           int sum=0;
+           for(int i=3;i<=n;++i)
+           {
+              sum = fn1+fn2;
+              fn1=fn2;
+              fn2=sum;
+          }
+         return sum;
+       }
+   };
  ## 平时的练习
