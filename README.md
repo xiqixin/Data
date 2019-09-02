@@ -106,14 +106,14 @@
      {
 	     vector<int> v;//用于存放输入的数组
 	     int tmp;
-          while (1)
+             while (1)
 	     {
 		     scanf("%d ", &tmp);
 		     fflush(stdin);
 		     v.push_back(tmp);
 	     }
 	     sort(v.begin(), v.end());
-          int i = len / 2;
+             int i = len / 2;
 	     cout << v[i] << endl;
 	     return 0;
      }
@@ -160,8 +160,8 @@
 				cout << "f";
 
 		}ekse{
-            cout << v[i]; 
-		}
+                cout << v[i]; 
+	     }
 	}
 	return 0;
      }
