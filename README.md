@@ -1,6 +1,16 @@
 # Data
 数据结构
-
+## 求二进制中1的个数
+	public class Solution {
+    	public int NumberOf1(int n) {
+       		 int count = 0;
+        	 while(n!= 0){
+          	     count++;
+         	  	 n = n & (n - 1);
+         	}
+        	return count;
+    	}
+	}
 ## 单链表逆序输入到一个数组中返回
      class Solution {
      public:
