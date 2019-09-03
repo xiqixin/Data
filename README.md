@@ -1,7 +1,7 @@
 # Data
 数据结构
 ##  二叉树的镜像
-	class Solution {
+    class Solution {
 	public:
    		 void Mirror(TreeNode *pRoot) {
         	if(pRoot==NULL){
@@ -12,8 +12,8 @@
            pRoot->right = tmp;
            Mirror(pRoot->left);
            Mirror(pRoot->right);
-        }
-   };
+         }
+    };
 ## 求二进制中1的个数
 	public class Solution {
     	public int NumberOf1(int n) {
@@ -23,7 +23,7 @@
          	  	 n = n & (n - 1);
          	}
         	return count;
-    	}
+    	    }
 	}
 ## 单链表逆序输入到一个数组中返回
      class Solution {
