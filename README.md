@@ -1,5 +1,19 @@
 # Data
 数据结构
+##  二叉树的镜像
+	class Solution {
+	public:
+   		 void Mirror(TreeNode *pRoot) {
+        	if(pRoot==NULL){
+          	  return;
+        	}
+       	   TreeNode *tmp = pRoot->left;
+           pRoot->left = pRoot->right;
+           pRoot->right = tmp;
+           Mirror(pRoot->left);
+           Mirror(pRoot->right);
+        }
+   };
 ## 求二进制中1的个数
 	public class Solution {
     	public int NumberOf1(int n) {
