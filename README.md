@@ -118,6 +118,20 @@
                 return root;
    	   }
 	}
+ ##  二叉树的高度
+     class Solution {
+	public:
+    	int TreeDepth(TreeNode* pRoot)
+        {
+             if(pRoot==nullptr)
+             {
+                return 0;
+             }
+             int leftdepth=TreeDepth(pRoot->left);
+             int rightdepth=TreeDepth(pRoot->right);
+            return 1+max(leftdepth,rightdepth);
+        }
+     };
  ## 剑指offer
  ## 输出字符串中出现次数大于等于n/2的数
      //输出数字串中出现次数大于等于n/2的数
