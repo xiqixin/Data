@@ -132,6 +132,15 @@
             return 1+max(leftdepth,rightdepth);
         }
      };
+ ##  求1+2+3+...+n，要求不能使用乘除法、for、while、if、else、switch、case等关键字及条件判断语句（A?B:C）。
+    class Solution {
+    public:
+        int Sum_Solution(int n) {
+             int tmp=n;
+             tmp&&(tmp+=Sum_Solution(n-1));
+            return tmp;
+         }
+    };
  ## 剑指offer
  ## 输出字符串中出现次数大于等于n/2的数
      //输出数字串中出现次数大于等于n/2的数
