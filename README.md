@@ -1,5 +1,21 @@
 # Data
 数据结构
+##  连续子数组和的最大值
+    class Solution {
+    public:
+        int FindGreatestSumOfSubArray(vector<int> array) {
+             if(array.empty())
+                 return -1;
+             int sum=array[0];//连续子数组和
+             int max=array[0];//子数组和中的最大值
+             for(size_t i=1;i<array.size();++i)
+             {
+                sum=(sum>0)?(sum+array[i]):array[i];
+                max=(max<sum)?sum:max;//保证max保存的是子数组和的最大值
+             }  
+             return max;
+        }
+    };
 ##  二叉树的镜像
     class Solution {
 	public:
