@@ -1,5 +1,17 @@
 # Data
 数据结构
+##  变态跳台阶
+    class Solution {
+	public:
+        int jumpFloorII(int number) {
+            //f1=1; f2=2; f3=4; fn=2^(n-1)
+            //采用左移
+           if(number<=0)
+              return 0;
+        
+          return 1<<(number-1);
+        }
+    };
 ##  连续子数组和的最大值
     class Solution {
     public:
