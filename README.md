@@ -12,6 +12,29 @@
           return 1<<(number-1);
         }
     };
+##  矩形覆盖
+    class Solution {
+	public:
+   		 int rectCover(int number) {
+       		 //f1=1,f2=2,f3=3,f4=5,fn=(f(n-1)+f(n-2))
+       		 if(number<=0)
+         	   return 0;
+        	 if(number==1)
+           	   return 1;
+       		 if(number==2)
+               return 2;
+             int f1=1;
+             int f2=2;
+             int sum=0;
+             for(int i=3;i<=number;++i)
+             {
+                 sum=f1+f2;
+                 f1=f2;
+                 f2=sum;
+             }
+             return sum;
+         }
+     };
 ##  连续子数组和的最大值
     class Solution {
     public:
@@ -22,7 +45,7 @@
              int max=array[0];//子数组和中的最大值
              for(size_t i=1;i<array.size();++i)
              {
-                sum=(sum>0)?(sum+array[i]):array[i];
+                sum=(sum>0)?(sum+array[i]):array[i];	
                 max=(max<sum)?sum:max;//保证max保存的是子数组和的最大值
              }  
              return max;
