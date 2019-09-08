@@ -15,11 +15,11 @@
 ##  矩形覆盖
     class Solution {
 	public:
-   		 int rectCover(int number) {
-       		 //f1=1,f2=2,f3=3,f4=5,fn=(f(n-1)+f(n-2))
-  			 if(number<=0)
+     	 int rectCover(int number) {
+     		 //f1=1,f2=2,f3=3,f4=5,fn=(f(n-1)+f(n-2))
+			 if(number<=0)
          	   return 0;
-   		 	 if(number==1)
+             if(number==1)
            	   return 1;
 			 if(number==2)
                return 2;
