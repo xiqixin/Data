@@ -16,12 +16,12 @@
     class Solution {
 	public:
      	 int rectCover(int number) {
-     		 //f1=1,f2=2,f3=3,f4=5,fn=(f(n-1)+f(n-2))
-			 if(number<=0)
-         	   return 0;
+             //f1=1,f2=2,f3=3,f4=5,fn=(f(n-1)+f(n-2))
+	     if(number<=0)
+         	  return 0;
              if(number==1)
            	   return 1;
-			 if(number==2)
+	    if(number==2)
                return 2;
              int f1=1;
              int f2=2;
@@ -53,8 +53,8 @@
     };
 ##  二叉树的镜像
     class Solution {
-	public:
-   		 void Mirror(TreeNode *pRoot) {
+    public:
+   	 void Mirror(TreeNode *pRoot) {
         	if(pRoot==NULL){
           	  return;
         	}
@@ -75,7 +75,7 @@
          	}
         	return count;
     	    }
-	}
+	}；
 ## 单链表逆序输入到一个数组中返回
      class Solution {
      public:
@@ -99,10 +99,10 @@
      {
      public:
           void push(int node) {
-          stack1.push(node);
-           }
+             stack1.push(node);
+          }
 
-           int pop() {
+          int pop() {
                if(stack2.empty())
                {
                    while(!stack1.empty())
