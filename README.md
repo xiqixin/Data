@@ -249,13 +249,13 @@
     * };
 	*/
 	struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2) {
-		if (p1 == NULL)
+		if (l1 == NULL)
 		{
-			return p2;
+			return l2;
 		}
-		if (p2 == NULL)
+		if (l2 == NULL)
 		{
-			return p1;
+			return l1;
 		}
 		struct ListNode* new = (struct ListNode*)malloc(sizeof(struct ListNode));
 		struct ListNode* p0 = new;
