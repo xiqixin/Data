@@ -1,5 +1,20 @@
 # Data
 数据结构
+##  二叉树的镜像
+    class Solution {
+    public:
+         void Mirror(TreeNode *pRoot) {
+              if(pRoot)
+              {
+                  TreeNode *tmp=pRoot->left;
+           	  pRoot->left=pRoot->right;
+            	  pRoot->right=tmp;
+                  Mirror(pRoot->left);
+                 Mirror(pRoot->right);
+             }
+             return ;
+        }
+    };
 ##  变态跳台阶
     class Solution {
 	public:
