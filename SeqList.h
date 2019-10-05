@@ -5,7 +5,6 @@
 #include <string.h>
 #include <stddef.h>
 #include <assert.h>
-
 #define MAX_SIZE 5
 typedef int SLDataType;
 
